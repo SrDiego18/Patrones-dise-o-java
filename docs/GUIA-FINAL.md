@@ -9,10 +9,13 @@
 | Camilo Bastidas |
 | Santiago Solano |
 
+> ### 🎮 Página interactiva: [https://srdiego18.github.io/Patrones-dise-o-java/](https://srdiego18.github.io/Patrones-dise-o-java/)
+> Allí se puede probar cada patrón en vivo, ver su código Java, su diagrama UML y sus capturas. La Guía 1 aparece en morado y la Guía 2 en azul.
+
 | Acceso | Enlace |
 |---|---|
-| 🎮 Página interactiva (probar cada patrón en vivo) | https://srdiego18.github.io/Patrones-dise-o-java/ |
-| 📦 Repositorio con el código fuente | https://github.com/SrDiego18/Patrones-dise-o-java |
+| 🎮 Página interactiva (probar cada patrón en vivo) | [https://srdiego18.github.io/Patrones-dise-o-java/](https://srdiego18.github.io/Patrones-dise-o-java/) |
+| 📦 Repositorio con el código fuente | [https://github.com/SrDiego18/Patrones-dise-o-java](https://github.com/SrDiego18/Patrones-dise-o-java) |
 | ▶️ Ejecutar el Java real en el navegador | [Abrir en GitHub Codespaces](https://codespaces.new/SrDiego18/Patrones-dise-o-java?quickstart=1) |
 
 [⬅ Volver al README](../README.md)
@@ -69,6 +72,8 @@ Cada guía incluye: laboratorio paso a paso, actividad de análisis y verificaci
 > **Resultado de aprendizaje:** reconocer problemas de integración, composición y acceso entre objetos, y seleccionar un patrón estructural justificando beneficios y costos.
 >
 > **Patrones:** Adapter · Facade · Decorator · Proxy · Composite
+
+> 🎮 **Probar la Guía 1 en vivo:** [https://srdiego18.github.io/Patrones-dise-o-java/#guia1](https://srdiego18.github.io/Patrones-dise-o-java/#guia1)
 
 ### 1.1 Concepto central
 
@@ -1222,6 +1227,8 @@ class CompositeTest {
 > **Resultado de aprendizaje:** reconocer problemas de comunicación y distribución de responsabilidades entre objetos, y aplicar Strategy y Observer mediante una implementación Java guiada.
 >
 > **Patrones:** Strategy · Observer · State · Command · Template Method
+
+> 🎮 **Probar la Guía 2 en vivo:** [https://srdiego18.github.io/Patrones-dise-o-java/#guia2](https://srdiego18.github.io/Patrones-dise-o-java/#guia2)
 
 ### 2.1 Concepto central
 
