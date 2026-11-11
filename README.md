@@ -1,11 +1,31 @@
 # Patrones de diseño en Java — Estructurales y Comportamentales
 
-![Java](https://img.shields.io/badge/Java-17%2B-orange) ![JUnit](https://img.shields.io/badge/JUnit-5-green) ![Pruebas](https://img.shields.io/badge/pruebas-26%20OK-brightgreen) ![Maven](https://img.shields.io/badge/build-Maven-blue)
+![Java](https://img.shields.io/badge/Java-17%2B-orange) ![JUnit](https://img.shields.io/badge/JUnit-5-green) [![Pruebas](https://github.com/SrDiego18/Patrones-dise-o-java/actions/workflows/ci.yml/badge.svg)](https://github.com/SrDiego18/Patrones-dise-o-java/actions/workflows/ci.yml) ![Tests](https://img.shields.io/badge/tests-32%20OK-brightgreen) ![Patrones](https://img.shields.io/badge/patrones-10%2F10-blueviolet) ![Maven](https://img.shields.io/badge/build-Maven-blue)
 
 **Asignatura:** Patrones y metodologías de desarrollo
-**Estudiante:** _[Tu nombre completo]_
-**Docente:** _[Nombre de la profesora]_
-**Fecha:** _[dd/mm/aaaa]_
+
+### 👥 Integrantes
+
+| Integrante |
+|---|
+| Diego Romero |
+| Maicol Rubiano |
+| Camilo Bastidas |
+| Santiago Solano |
+
+**Fecha:** 10 de noviembre de 2026
+
+## 🌐 Acceso rápido
+
+| | |
+|---|---|
+| 🎮 **Página interactiva** (probar los 10 patrones en vivo) | **https://srdiego18.github.io/Patrones-dise-o-java/** |
+| ▶️ **Ejecutar el Java real en el navegador** (sin instalar nada) | [![Abrir en GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/SrDiego18/Patrones-dise-o-java?quickstart=1) |
+| 📘 Guía resuelta — Patrones estructurales | [docs/01-patrones-estructurales.md](docs/01-patrones-estructurales.md) |
+| 📗 Guía resuelta — Patrones comportamentales | [docs/02-patrones-comportamentales.md](docs/02-patrones-comportamentales.md) |
+| ✅ Resultado de las pruebas automáticas | [GitHub Actions](https://github.com/SrDiego18/Patrones-dise-o-java/actions) |
+
+> En Codespaces, cuando abra la terminal: `mvn test` ejecuta las 32 pruebas y `mvn -q compile exec:java` ejecuta la demostración.
 
 Solución completa de las dos guías del estudiante: laboratorios paso a paso, actividad de análisis, preguntas de verificación y trabajo autónomo (con diagramas, código y pruebas).
 
@@ -13,8 +33,8 @@ Solución completa de las dos guías del estudiante: laboratorios paso a paso, a
 
 | Guía | Laboratorio | Trabajo autónomo | Documento |
 |---|---|---|---|
-| **Patrones estructurales** | Adapter (pagos) · Facade (matrícula) | Decorator + Proxy — *Biblioteca digital* | [**docs/01-patrones-estructurales.md**](docs/01-patrones-estructurales.md) |
-| **Patrones comportamentales** | Strategy (envíos) · Observer (pedidos) | State + Command — *Sistema de pedidos* | [**docs/02-patrones-comportamentales.md**](docs/02-patrones-comportamentales.md) |
+| **Patrones estructurales** | Adapter (pagos) · Facade (matrícula) | Decorator + Proxy — *Biblioteca digital* · **Extra:** Composite | [**docs/01-patrones-estructurales.md**](docs/01-patrones-estructurales.md) |
+| **Patrones comportamentales** | Strategy (envíos) · Observer (pedidos) | State + Command — *Sistema de pedidos* · **Extra:** Template Method | [**docs/02-patrones-comportamentales.md**](docs/02-patrones-comportamentales.md) |
 
 Cada documento incluye:
 
@@ -24,31 +44,52 @@ Cada documento incluye:
 - ✅ Trabajo autónomo: problema, diagrama, código, 3 pruebas por patrón, justificación, alternativa y limitación
 - ✅ Autoevaluación frente a la rúbrica (25 / 30 / 20 / 15 / 10 %)
 
+### ⭐ Valor agregado (más allá de lo solicitado)
+
+- **Los 10 patrones implementados y probados**, no solo los 4 exigidos: también Composite y Template Method, que las guías solo piden reconocer.
+- **32 pruebas unitarias JUnit 5** (las guías piden 3 por patrón del trabajo autónomo).
+- **Integración continua con GitHub Actions**: cada `push` compila y ejecuta todas las pruebas automáticamente (insignia verde arriba).
+- **Mejoras sobre el código base de las guías**: validaciones, `desuscribir()` y control de duplicados en Observer, cupos reales e inyección de dependencias en Facade, redondeo correcto en Adapter, deshacer **y rehacer** en Command.
+- **Diagramas UML** de clases, secuencia y estados (Mermaid, se ven directamente en GitHub).
+- **Capturas** del código y de la ejecución de cada patrón en [`docs/capturas`](docs/capturas), y el **código completo pegado** en cada guía.
+- **Página web interactiva** con una demostración en vivo de cada patrón, su código, diagrama UML y capturas.
+- **Codespaces configurado**: el proyecto se abre y se ejecuta en el navegador con un clic.
+
+## 📸 Vista previa
+
+![Ejecución de todas las pruebas](docs/capturas/pruebas.png)
+
 ## 🗂️ Estructura del proyecto
 
 ```
 patrones-diseno-java/
 ├── pom.xml
 ├── README.md
+├── .github/workflows/ci.yml           ← pruebas automáticas en cada push
+├── .devcontainer/                     ← configuración de Codespaces
 ├── docs/
+│   ├── index.html                     ← página web interactiva (GitHub Pages)
 │   ├── 01-patrones-estructurales.md
-│   └── 02-patrones-comportamentales.md
+│   ├── 02-patrones-comportamentales.md
+│   └── capturas/                      ← capturas del código y de la ejecución
 └── src/
     ├── main/java/co/edu/patrones/
-    │   ├── Main.java                      ← demostración de los 8 patrones
+    │   ├── Main.java                      ← demostración de los 10 patrones
     │   ├── estructurales/
     │   │   ├── adapter/     (laboratorio)
     │   │   ├── facade/      (laboratorio)
     │   │   ├── decorator/   (trabajo autónomo)
-    │   │   └── proxy/       (trabajo autónomo)
+    │   │   ├── proxy/       (trabajo autónomo)
+    │   │   └── composite/   (extra)
     │   └── comportamentales/
     │       ├── strategy/    (laboratorio)
     │       ├── observer/    (laboratorio)
     │       ├── state/       (trabajo autónomo)
-    │       └── command/     (trabajo autónomo)
+    │       ├── command/     (trabajo autónomo)
+    │       └── templatemethod/ (extra)
     └── test/java/co/edu/patrones/
-        ├── estructurales/      AdapterTest, FacadeTest, DecoratorTest, ProxyTest
-        └── comportamentales/   StrategyTest, ObserverTest, StateTest, CommandTest
+        ├── estructurales/      AdapterTest, FacadeTest, DecoratorTest, ProxyTest, CompositeTest
+        └── comportamentales/   StrategyTest, ObserverTest, StateTest, CommandTest, TemplateMethodTest
 ```
 
 ## ▶️ Cómo ejecutar
@@ -56,7 +97,7 @@ patrones-diseno-java/
 Requisitos: **JDK 17 o superior** y **Maven 3.8+** (o abrir el proyecto en IntelliJ IDEA / VS Code / NetBeans, que lo reconocen como proyecto Maven).
 
 ```bash
-# Ejecutar las 26 pruebas unitarias
+# Ejecutar las 32 pruebas unitarias
 mvn test
 
 # Ejecutar la demostración de todos los patrones
@@ -104,7 +145,9 @@ Regla de negocio: No se puede cancelar un pedido ENVIADO
 | Observer | `ObserverTest` | 3 |
 | State | `StateTest` | 3 |
 | Command | `CommandTest` | 3 |
-| **Total** | | **26** |
+| Composite *(extra)* | `CompositeTest` | 3 |
+| Template Method *(extra)* | `TemplateMethodTest` | 3 |
+| **Total** | | **32** |
 
 ## 🧭 Resumen: ¿qué patrón usar?
 

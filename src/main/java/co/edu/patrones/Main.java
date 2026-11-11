@@ -4,12 +4,16 @@ import co.edu.patrones.comportamentales.command.*;
 import co.edu.patrones.comportamentales.observer.*;
 import co.edu.patrones.comportamentales.state.PedidoTienda;
 import co.edu.patrones.comportamentales.strategy.*;
+import co.edu.patrones.comportamentales.templatemethod.*;
 import co.edu.patrones.estructurales.adapter.*;
+import co.edu.patrones.estructurales.composite.*;
+
+import java.util.List;
 import co.edu.patrones.estructurales.decorator.*;
 import co.edu.patrones.estructurales.facade.MatriculaFacade;
 import co.edu.patrones.estructurales.proxy.*;
 
-/** Demostración ejecutable de los 8 patrones del repositorio. */
+/** Demostración ejecutable de los 10 patrones del repositorio. */
 public class Main {
     public static void main(String[] args) {
         titulo("PATRONES ESTRUCTURALES");
@@ -36,6 +40,14 @@ public class Main {
         Usuario lector = new Usuario("Ana", true);
         System.out.println(libro.leer(lector));         // descarga aquí
         System.out.println(libro.leer(lector));         // usa la caché
+
+        seccion("Composite (extra - archivos y carpetas)");
+        Carpeta raiz = new Carpeta("biblioteca")
+                .agregar(new Archivo("catalogo.pdf", 300))
+                .agregar(new Carpeta("libros")
+                        .agregar(new Archivo("java.epub", 500))
+                        .agregar(new Archivo("gof.pdf", 200)));
+        System.out.print(raiz.mostrar(0));
 
         titulo("PATRONES COMPORTAMENTALES");
 
@@ -72,6 +84,11 @@ public class Main {
         gestor.deshacer();
         System.out.println("Tras deshacer: " + carrito.getItems());
         gestor.getBitacora().forEach(System.out::println);
+
+        seccion("Template Method (extra - reportes)");
+        List<Venta> ventas = List.of(new Venta("Cuaderno", 5000), new Venta("Libro", 42000.5));
+        System.out.println(new ReporteCsv().generar(ventas));
+        System.out.println(new ReporteJson().generar(ventas));
     }
 
     private static void titulo(String t) {

@@ -1,0 +1,20 @@
+{
+  "name": "Patrones de diseño en Java",
+  "image": "mcr.microsoft.com/devcontainers/java:1-17",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["vscjava.vscode-java-pack", "bierner.markdown-mermaid"]
+    },
+    "codespaces": {
+      "openFiles": ["README.md", "src/main/java/co/edu/patrones/Main.java"]
+    }
+  },
+  "postCreateCommand": "mvn -q -B test-compile",
+  "postAttachCommand": "echo '>> Ejecuta: mvn test   |   mvn -q compile exec:java'"
+}
