@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Patrones de Diseño en Java</title>
 <meta name="description" content="Laboratorio interactivo de patrones estructurales y comportamentales en Java: código, diagramas, capturas y demostraciones en vivo.">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<link rel="stylesheet" href="vendor/github-dark.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -134,6 +134,56 @@ button.b:disabled{opacity:.45;cursor:not-allowed}
 .teoria{display:grid;gap:12px}
 .teoria .q{border:1px solid var(--line);border-radius:12px;padding:12px 16px}
 .teoria .q b{display:block;margin-bottom:4px}
+/* ---------- Colores por guía ---------- */
+.tg1{--brand:#6d28d9;--brand-soft:#f1ebff;--guia:#6d28d9}
+.tg2{--brand:#0369a1;--brand-soft:#e3f1fa;--guia:#0369a1}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .tg1{--brand:#a78bfa;--brand-soft:#241a40;--guia:#a78bfa}
+  :root:not([data-theme="light"]) .tg2{--brand:#38bdf8;--brand-soft:#0c2433;--guia:#38bdf8}
+}
+:root[data-theme="dark"] .tg1{--brand:#a78bfa;--brand-soft:#241a40;--guia:#a78bfa}
+:root[data-theme="dark"] .tg2{--brand:#38bdf8;--brand-soft:#0c2433;--guia:#38bdf8}
+.banda{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:11px 24px;background:var(--brand);color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;border-radius:var(--r) var(--r) 0 0}
+.banda a{color:#fff;margin-left:auto;font-weight:600;letter-spacing:0;text-transform:none;text-decoration:none;opacity:.9}
+.banda a:hover{opacity:1;text-decoration:underline}
+.grupo i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.side a.g1{border-left:3px solid #8b5cf6}
+.side a.g2{border-left:3px solid #0ea5e9}
+.side a.inicio{border-left:3px solid transparent}
+.guias{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.guia-card{overflow:hidden}
+.guia-card .in{padding:18px 22px 22px}
+.guia-card h3{margin:0 0 4px;font-size:22px;letter-spacing:-.01em}
+.guia-card p{color:var(--muted);margin:0 0 12px;font-size:14px}
+.pat{display:flex;flex-direction:column;gap:6px;margin:12px 0 16px}
+.pat a{display:flex;justify-content:space-between;align-items:center;gap:8px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-weight:600;font-size:14px}
+.pat a:hover{border-color:var(--brand);background:var(--brand-soft)}
+.pat a span{font-size:11px;font-weight:700;color:var(--brand)}
+.intro{padding:22px 24px}
+.intro h2{margin:0 0 6px;font-size:26px;letter-spacing:-.02em}
+.intro p{margin:0;color:var(--muted)}
+.leyenda{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.leyenda span{display:inline-flex;align-items:center;gap:8px;max-width:100%;flex-wrap:wrap;font-weight:600;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.leyenda i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.pasos-uso{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:0 24px 22px}
+.pasos-uso div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13.5px}
+.pasos-uso b{display:block;font-size:20px;color:var(--brand)}
+.md{font-size:14.5px}
+.md h3,.md h4{margin:18px 0 8px}
+.md table{border-collapse:collapse;width:100%;margin:10px 0;font-size:14px;display:block;overflow-x:auto}
+.md th,.md td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.md th{background:var(--brand-soft)}
+.md code{background:var(--brand-soft);padding:1px 5px;border-radius:5px;font-size:.92em}
+.md blockquote{margin:10px 0;border-left:3px solid var(--brand);padding:4px 14px;color:var(--muted);background:var(--brand-soft);border-radius:0 8px 8px 0}
+.navpat{display:flex;justify-content:space-between;gap:10px;padding:0 24px 22px;flex-wrap:wrap}
+.navpat a{text-decoration:none;font-weight:600;border:1px solid var(--line);border-radius:10px;padding:8px 14px;color:var(--ink)}
+.navpat a:hover{border-color:var(--brand);color:var(--brand)}
+@media (max-width: 900px){
+  .guias,.pasos-uso{grid-template-columns:1fr}
+  nav.side .grupo{display:flex;align-items:center;flex:0 0 auto;margin:0 2px 0 8px;font-size:11px}
+  .banda{padding:10px 16px}
+  .intro{padding:18px 16px}.pasos-uso,.navpat{padding-left:16px;padding-right:16px}
+}
 footer{max-width:1240px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:13px}
 
 @media (max-width: 900px){
@@ -155,20 +205,21 @@ footer{max-width:1240px;margin:0 auto;padding:0 20px 40px;color:var(--muted);fon
   <div class="hero-in">
     <div>
       <h1>Patrones de Diseño en Java</h1>
-      <p>Laboratorio interactivo de patrones <b>estructurales</b> y <b>comportamentales</b>: prueba cada patrón en vivo, revisa el código Java real, sus diagramas UML y las capturas de ejecución.</p>
+      <p>Entrega unificada de la <b>Guía 1 — Patrones estructurales</b> y la <b>Guía 2 — Patrones comportamentales</b>. Prueba cada patrón en vivo, revisa el código Java real, sus diagramas UML, las capturas de ejecución y las respuestas de cada guía.</p>
       <div class="equipo" aria-label="Integrantes">
         <span>Diego Romero</span><span>Maicol Rubiano</span><span>Camilo Bastidas</span><span>Santiago Solano</span>
       </div>
     </div>
     <div class="acciones">
-      <a class="btn-hero" href="https://github.com/SrDiego18/Patrones-dise-o-java" target="_blank" rel="noopener">⌥ Repositorio</a>
+      <a class="btn-hero" href="https://github.com/SrDiego18/Patrones-dise-o-java/blob/main/docs/GUIA-FINAL.md" target="_blank" rel="noopener">📖 Guía final</a>
+      <a class="btn-hero alt" href="https://github.com/SrDiego18/Patrones-dise-o-java" target="_blank" rel="noopener">⌥ Repositorio</a>
       <a class="btn-hero alt" href="https://codespaces.new/SrDiego18/Patrones-dise-o-java?quickstart=1" target="_blank" rel="noopener">▶ Ejecutar Java en Codespaces</a>
     </div>
   </div>
   <div class="stats">
     <div class="stat"><b>10 / 10</b><small>patrones implementados</small></div>
     <div class="stat"><b>32</b><small>pruebas JUnit 5</small></div>
-    <div class="stat"><b>2</b><small>guías resueltas</small></div>
+    <div class="stat"><b>2 en 1</b><small>guías unidas en una entrega</small></div>
     <div class="stat"><b>CI</b><small>pruebas automáticas en GitHub</small></div>
   </div>
 </header>
@@ -183,8 +234,8 @@ footer{max-width:1240px;margin:0 auto;padding:0 20px 40px;color:var(--muted);fon
 </footer>
 
 <script src="codigo.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="vendor/highlight.min.js"></script>
+<script src="vendor/marked.min.js"></script>
 <script>
 /* =========================================================
    Utilidades
@@ -531,36 +582,116 @@ procesador.pagar(<span id="mv">125.50</span>);</div>
 };
 
 /* =========================================================
-   Render
+   Guías y navegación
    ========================================================= */
+const GUIAS = {
+  1: { n: 1, g: 'est', titulo: 'Guía 1 — Patrones estructurales', corto: 'Patrones estructurales', color: '#8b5cf6',
+       dominio: 'Laboratorio: Adapter y Facade · Trabajo autónomo: Decorator y Proxy (biblioteca digital) · Extra: Composite' },
+  2: { n: 2, g: 'comp', titulo: 'Guía 2 — Patrones comportamentales', corto: 'Patrones comportamentales', color: '#0ea5e9',
+       dominio: 'Laboratorio: Strategy y Observer · Trabajo autónomo: State y Command (sistema de pedidos) · Extra: Template Method' }
+};
+const guiaDe = p => p.g === 'est' ? GUIAS[1] : GUIAS[2];
+const TEXTO = (window.CODIGO || {})._guias || {};
+const md = t => window.marked ? marked.parse(t) : `<pre style="white-space:pre-wrap">${esc(t)}</pre>`;
+
 const nav = $('#nav');
-[['est', 'Estructurales'], ['comp', 'Comportamentales']].forEach(([g, t]) => {
-  nav.append(h(`<div class="grupo">${t}</div>`));
-  P.filter(p => p.g === g).forEach(p => nav.append(h(`<a href="#${p.k}" data-k="${p.k}">${p.n}<span class="tag">${p.t}</span></a>`)));
+nav.append(h(`<a href="#inicio" data-k="inicio" class="inicio">🏠 Inicio · las dos guías</a>`));
+Object.values(GUIAS).forEach(G => {
+  nav.append(h(`<div class="grupo"><i style="background:${G.color}"></i>Guía ${G.n} · ${G.g === 'est' ? 'Estructurales' : 'Comportamentales'}</div>`));
+  nav.append(h(`<a href="#guia${G.n}" data-k="guia${G.n}" class="g${G.n} tg${G.n}">📘 Resumen y respuestas</a>`));
+  P.filter(p => p.g === G.g).forEach(p => nav.append(h(`<a href="#${p.k}" data-k="${p.k}" class="g${G.n} tg${G.n}">${p.n}<span class="tag">${p.t}</span></a>`)));
 });
 const tema = h('<button class="tema" type="button">◐ Cambiar tema</button>');
 tema.onclick = () => { const d = document.documentElement; const oscuro = d.dataset.theme ? d.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; d.dataset.theme = oscuro ? 'light' : 'dark'; try { localStorage.setItem('tema', d.dataset.theme); } catch (e) {} };
 nav.append(tema);
 try { const t = localStorage.getItem('tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 
-if (window.mermaid) mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'strict' });
+let cargaMermaid = null;
+const usarMermaid = () => cargaMermaid || (cargaMermaid = new Promise((ok, mal) => {
+  const sc = document.createElement('script'); sc.src = 'vendor/mermaid.min.js';
+  sc.onload = () => { mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'strict' }); ok(window.mermaid); };
+  sc.onerror = mal; document.head.append(sc);
+}));
 let nDiag = 0;
 
-function render(k) {
-  const p = P.find(x => x.k === k) || P[0];
-  nav.querySelectorAll('a').forEach(a => a.classList.toggle('activo', a.dataset.k === p.k));
-  const datos = (window.CODIGO || {})[p.k] || { archivos: [], diagramas: [] };
+function marcar(k, guia) {
+  nav.querySelectorAll('a').forEach(a => a.classList.toggle('activo', a.dataset.k === k));
+  document.body.classList.remove('tg1', 'tg2');
+  if (guia) document.body.classList.add('tg' + guia);
+}
+
+/* ---------- Inicio: las dos guías lado a lado ---------- */
+function vistaInicio() {
+  marcar('inicio');
+  const app = $('#app'); app.innerHTML = '';
+  app.append(h(`<article class="card">
+    <div class="intro">
+      <h2>Una entrega, dos guías</h2>
+      <p>Las dos guías del estudiante se resolvieron en un solo proyecto Java. Cada guía tiene su propio color en toda la página, su carpeta en el código y su numeración en el documento final.</p>
+      <div class="leyenda"><span><i style="background:#8b5cf6"></i>Guía 1 — Patrones estructurales · <code>estructurales/</code> · secciones 1.x</span><span><i style="background:#0ea5e9"></i>Guía 2 — Patrones comportamentales · <code>comportamentales/</code> · secciones 2.x</span></div>
+    </div>
+    <div class="pasos-uso">
+      <div><b>1</b>Elige una guía o un patrón en el menú.</div>
+      <div><b>2</b><b style="font-size:14px;display:inline;color:inherit">▶ Probar en vivo:</b> usa los botones y mira la consola.</div>
+      <div><b>3</b><b style="font-size:14px;display:inline;color:inherit">Código Java:</b> el código real del repositorio.</div>
+      <div><b>4</b><b style="font-size:14px;display:inline;color:inherit">Capturas</b> y <b style="font-size:14px;display:inline;color:inherit">Diagrama UML</b> de cada patrón.</div>
+    </div></article>`));
+  const cont = h('<div class="guias"></div>');
+  Object.values(GUIAS).forEach(G => {
+    const r = (TEXTO[G.n] || {}).resultado || '';
+    cont.append(h(`<article class="card guia-card tg${G.n}">
+      <div class="banda">Guía ${G.n} · ${G.corto}</div>
+      <div class="in"><h3>${G.titulo}</h3><p><b>Resultado de aprendizaje:</b> ${esc(r)}</p>
+      <div class="pat">${P.filter(p => p.g === G.g).map(p => `<a href="#${p.k}">${p.n}<span>${p.t}</span></a>`).join('')}</div>
+      <a class="b p" style="display:inline-block;text-decoration:none;padding:10px 16px;border-radius:10px;background:var(--brand);color:#fff;font-weight:600" href="#guia${G.n}">Ver resumen, análisis y verificación de la Guía ${G.n} →</a></div></article>`));
+  });
+  app.append(cont);
+}
+
+/* ---------- Vista de una guía (resumen y respuestas) ---------- */
+function vistaGuia(n) {
+  const G = GUIAS[n], T = TEXTO[n] || {};
+  marcar('guia' + n, n);
   const app = $('#app'); app.innerHTML = '';
   const card = h(`<article class="card">
+    <div class="banda">Guía ${n} · ${G.corto}<a href="https://github.com/SrDiego18/Patrones-dise-o-java/blob/main/docs/GUIA-FINAL.md#gu%C3%ADa-${n}--patrones-${G.g === 'est' ? 'estructurales' : 'comportamentales'}" target="_blank" rel="noopener">Ver en la guía final ↗</a></div>
+    <div class="cab"><h2>${G.titulo}</h2><p class="lead"><b>Resultado de aprendizaje:</b> ${esc(T.resultado || '')}</p>
+      <div class="pps"><div><b>Patrones de esta guía</b>${P.filter(p => p.g === G.g).map(p => `<a href="#${p.k}">${p.n}</a>`).join(' · ')}</div><div><b>Qué se implementó</b>${G.dominio}</div></div></div>
+    <div class="tabs"><button class="on" data-t="concepto">Resumen</button><button data-t="analisis">Actividad de análisis</button><button data-t="verificacion">Verificación</button><button data-t="rubrica">Rúbrica</button></div>
+    <div class="cuerpo md"></div></article>`);
+  app.append(card);
+  const cuerpo = $('.cuerpo', card);
+  const ver = t => {
+    card.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.t === t));
+    const partes = t === 'concepto' ? ['concepto', 'patrones'] : [t];
+    cuerpo.innerHTML = partes.map(k => T[k] ? `<h3>${n}.${{concepto: 1, patrones: 2, analisis: 5, verificacion: 6, rubrica: 10}[k]} ${esc(T[k].titulo)}</h3>${md(T[k].md)}` : '').join('');
+    cuerpo.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+  };
+  card.querySelectorAll('.tabs button').forEach(b => b.onclick = () => ver(b.dataset.t));
+  ver('concepto');
+}
+
+/* ---------- Vista de un patrón ---------- */
+function render(k) {
+  const p = P.find(x => x.k === k) || P[0];
+  const G = guiaDe(p);
+  marcar(p.k, G.n);
+  const datos = (window.CODIGO || {})[p.k] || { archivos: [], diagramas: [] };
+  const lista = P.filter(x => x.g === p.g), i = lista.indexOf(p);
+  const ant = lista[i - 1], sig = lista[i + 1];
+  const app = $('#app'); app.innerHTML = '';
+  const card = h(`<article class="card">
+    <div class="banda">Guía ${G.n} · ${G.corto} · ${p.t}<a href="#guia${G.n}">← Resumen de la Guía ${G.n}</a></div>
     <div class="cab">
-      <div class="meta"><span class="pill ${p.g}">${p.g === 'est' ? 'Estructural' : 'Comportamental'}</span><span class="pill tipo">${p.t}</span></div>
+      <div class="meta"><span class="pill ${p.g}">Guía ${G.n} · ${p.g === 'est' ? 'Estructural' : 'Comportamental'}</span><span class="pill tipo">${p.t}</span></div>
       <h2>${p.n}</h2><p class="lead">${p.lead}</p>
       <div class="pps"><div><b>Problema</b>${esc(p.prob)}</div><div><b>Solución con el patrón</b>${esc(p.sol)}</div></div>
     </div>
     <div class="tabs" role="tablist">
       <button class="on" data-t="demo">▶ Probar en vivo</button><button data-t="codigo">Código Java</button><button data-t="diagrama">Diagrama UML</button><button data-t="capturas">Capturas</button>
     </div>
-    <div class="cuerpo"></div></article>`);
+    <div class="cuerpo"></div>
+    <div class="navpat">${ant ? `<a href="#${ant.k}">← ${ant.n}</a>` : `<a href="#guia${G.n}">← Resumen de la Guía ${G.n}</a>`}${sig ? `<a href="#${sig.k}">${sig.n} →</a>` : (G.n === 1 ? `<a href="#guia2">Ir a la Guía 2 →</a>` : `<a href="#inicio">Volver al inicio →</a>`)}</div></article>`);
   app.append(card);
   const cuerpo = $('.cuerpo', card);
   const tabs = {
@@ -570,7 +701,7 @@ function render(k) {
       cuerpo.append(lista, vista);
       const ver = (a, btn) => {
         lista.querySelectorAll('button').forEach(b => b.classList.remove('on')); btn.classList.add('on');
-        $('span', vista).textContent = `src/${a.prueba ? 'test' : 'main'}/java/co/edu/patrones/${datos.grupo}/${a.prueba ? '' : p.k + '/'}${a.nombre}`;
+        $('span', vista).textContent = `Guía ${G.n} › src/${a.prueba ? 'test' : 'main'}/java/co/edu/patrones/${datos.grupo}/${a.prueba ? '' : p.k + '/'}${a.nombre}`;
         const c = $('code', vista); c.textContent = a.src; c.removeAttribute('data-highlighted'); if (window.hljs) hljs.highlightElement(c);
         $('button', vista).onclick = () => { navigator.clipboard && navigator.clipboard.writeText(a.src).then(() => { $('button', vista).textContent = '¡Copiado!'; setTimeout(() => $('button', vista).textContent = 'Copiar', 1200); }); };
       };
@@ -578,6 +709,9 @@ function render(k) {
     },
     async diagrama() {
       if (!datos.diagramas.length) { cuerpo.textContent = 'Sin diagrama.'; return; }
+      const espera = h('<p style="color:var(--muted)">Cargando diagrama…</p>'); cuerpo.append(espera);
+      try { await usarMermaid(); } catch (e) {}
+      espera.remove();
       for (const d of datos.diagramas) {
         const box = h('<div class="diag"></div>'); cuerpo.append(box);
         try { const { svg } = await mermaid.render('m' + (++nDiag), d); box.innerHTML = svg; } catch (e) { box.innerHTML = `<pre class="mono" style="text-align:left">${esc(d)}</pre>`; }
@@ -592,8 +726,14 @@ function render(k) {
   card.querySelectorAll('.tabs button').forEach(b => b.onclick = () => { card.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b)); cuerpo.innerHTML = ''; tabs[b.dataset.t](); });
   tabs.demo();
 }
-const ir = () => render(location.hash.slice(1));
-addEventListener('hashchange', () => { ir(); if (innerWidth < 900) $('#app').scrollIntoView({ behavior: 'smooth' }); });
+
+const ir = () => {
+  const k = location.hash.slice(1);
+  if (!k || k === 'inicio') return vistaInicio();
+  if (k === 'guia1' || k === 'guia2') return vistaGuia(+k.slice(-1));
+  render(k);
+};
+addEventListener('hashchange', () => { ir(); if (innerWidth < 900) $('#app').scrollIntoView({ behavior: 'smooth' }); else scrollTo({ top: 0 }); });
 ir();
 </script>
 </body>

@@ -21,8 +21,10 @@
 |---|---|
 | 🎮 **Página interactiva** (probar los 10 patrones en vivo) | **https://srdiego18.github.io/Patrones-dise-o-java/** |
 | ▶️ **Ejecutar el Java real en el navegador** (sin instalar nada) | [![Abrir en GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/SrDiego18/Patrones-dise-o-java?quickstart=1) |
-| 📘 Guía resuelta — Patrones estructurales | [docs/01-patrones-estructurales.md](docs/01-patrones-estructurales.md) |
-| 📗 Guía resuelta — Patrones comportamentales | [docs/02-patrones-comportamentales.md](docs/02-patrones-comportamentales.md) |
+| 📖 **Guía final** (las dos guías unidas en un solo documento) | [**docs/GUIA-FINAL.md**](docs/GUIA-FINAL.md) |
+| 📄 Guía final en **Word** y **PDF** (para descargar o imprimir) | [Word](entrega/Guia_final_patrones_diseno.docx) · [PDF](entrega/Guia_final_patrones_diseno.pdf) |
+| 🟣 Guía 1 — Patrones estructurales | [Ir a la Guía 1](docs/GUIA-FINAL.md#guía-1--patrones-estructurales) |
+| 🔵 Guía 2 — Patrones comportamentales | [Ir a la Guía 2](docs/GUIA-FINAL.md#guía-2--patrones-comportamentales) |
 | ✅ Resultado de las pruebas automáticas | [GitHub Actions](https://github.com/SrDiego18/Patrones-dise-o-java/actions) |
 
 > En Codespaces, cuando abra la terminal: `mvn test` ejecuta las 32 pruebas y `mvn -q compile exec:java` ejecuta la demostración.
@@ -31,12 +33,12 @@ Solución completa de las dos guías del estudiante: laboratorios paso a paso, a
 
 ## 📘 Guías resueltas
 
-| Guía | Laboratorio | Trabajo autónomo | Documento |
+| Guía | Laboratorio | Trabajo autónomo | Sección de la guía final |
 |---|---|---|---|
-| **Patrones estructurales** | Adapter (pagos) · Facade (matrícula) | Decorator + Proxy — *Biblioteca digital* · **Extra:** Composite | [**docs/01-patrones-estructurales.md**](docs/01-patrones-estructurales.md) |
-| **Patrones comportamentales** | Strategy (envíos) · Observer (pedidos) | State + Command — *Sistema de pedidos* · **Extra:** Template Method | [**docs/02-patrones-comportamentales.md**](docs/02-patrones-comportamentales.md) |
+| 🟣 **Guía 1 — Patrones estructurales** | Adapter (pagos) · Facade (matrícula) | Decorator + Proxy — *Biblioteca digital* · **Extra:** Composite | [Secciones 1.1 – 1.10](docs/GUIA-FINAL.md#guía-1--patrones-estructurales) |
+| 🔵 **Guía 2 — Patrones comportamentales** | Strategy (envíos) · Observer (pedidos) | State + Command — *Sistema de pedidos* · **Extra:** Template Method | [Secciones 2.1 – 2.10](docs/GUIA-FINAL.md#guía-2--patrones-comportamentales) |
 
-Cada documento incluye:
+Las dos guías están unidas en [**docs/GUIA-FINAL.md**](docs/GUIA-FINAL.md) (también en Word y PDF en [`entrega/`](entrega)), y cada una incluye:
 
 - ✅ Laboratorio paso a paso con diagrama UML y salida obtenida
 - ✅ Actividad de análisis: las 5 situaciones con el patrón elegido y su justificación
@@ -67,29 +69,29 @@ patrones-diseno-java/
 ├── README.md
 ├── .github/workflows/ci.yml           ← pruebas automáticas en cada push
 ├── .devcontainer/                     ← configuración de Codespaces
+├── entrega/                           ← guía final en Word y PDF
 ├── docs/
 │   ├── index.html                     ← página web interactiva (GitHub Pages)
-│   ├── 01-patrones-estructurales.md
-│   ├── 02-patrones-comportamentales.md
+│   ├── GUIA-FINAL.md                  ← las dos guías resueltas en un solo documento
 │   └── capturas/                      ← capturas del código y de la ejecución
 └── src/
     ├── main/java/co/edu/patrones/
     │   ├── Main.java                      ← demostración de los 10 patrones
-    │   ├── estructurales/
+    │   ├── estructurales/                 ← GUÍA 1
     │   │   ├── adapter/     (laboratorio)
     │   │   ├── facade/      (laboratorio)
     │   │   ├── decorator/   (trabajo autónomo)
     │   │   ├── proxy/       (trabajo autónomo)
     │   │   └── composite/   (extra)
-    │   └── comportamentales/
+    │   └── comportamentales/              ← GUÍA 2
     │       ├── strategy/    (laboratorio)
     │       ├── observer/    (laboratorio)
     │       ├── state/       (trabajo autónomo)
     │       ├── command/     (trabajo autónomo)
     │       └── templatemethod/ (extra)
     └── test/java/co/edu/patrones/
-        ├── estructurales/      AdapterTest, FacadeTest, DecoratorTest, ProxyTest, CompositeTest
-        └── comportamentales/   StrategyTest, ObserverTest, StateTest, CommandTest, TemplateMethodTest
+        ├── estructurales/      (Guía 1) AdapterTest, FacadeTest, DecoratorTest, ProxyTest, CompositeTest
+        └── comportamentales/   (Guía 2) StrategyTest, ObserverTest, StateTest, CommandTest, TemplateMethodTest
 ```
 
 ## ▶️ Cómo ejecutar
